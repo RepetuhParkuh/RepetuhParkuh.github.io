@@ -56,6 +56,6 @@ var timer=setInterval(() => {
     timeLi.innerHTML=hours + ":" + minutes + ":" + seconds;
 }, 1000);
 
-const reasons = ["Jsi moje neskutečná podpora!", "Umíš úžasně vařit!", "Jsi neskutečně nádherná!", "Jsi strašně roztomilá!", "Máš radost z maličkostí", ]
+const reasons = ["Jsi moje neskutečná podpora!", "Umíš úžasně vařit!", "Jsi neskutečně nádherná!", "Jsi strašně roztomilá!", "Máš radost z maličkostí", "Dokážeš mi vždycky zlepšit náladu!"]
 var reasonText = document.getElementById("reasonText");
 reasonText.innerHTML=reasons[Math.floor(Math.random()*reasons.length)];
