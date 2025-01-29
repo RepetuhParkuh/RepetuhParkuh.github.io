@@ -90,6 +90,4 @@ const reasons = ["Jsi moje neskutečná podpora!", "Umíš úžasně vařit!", "
 var reasonText = document.getElementById("reasonText");
 reasonText.innerHTML=reasons[Math.floor(Math.random()*reasons.length)];
 
-const images = ["IMG_2354.JPEG"];
-
 document.getElementById("img").src="images/img"+Math.floor(Math.random()*13)+".JPEG";
