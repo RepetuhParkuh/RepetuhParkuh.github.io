@@ -89,3 +89,7 @@ var timer=setInterval(() => {
 const reasons = ["Jsi moje neskutečná podpora!", "Umíš úžasně vařit!", "Jsi neskutečně nádherná!", "Jsi strašně roztomilá!", "Máš radost z maličkostí", "Dokážeš mi vždycky zlepšit náladu!"]
 var reasonText = document.getElementById("reasonText");
 reasonText.innerHTML=reasons[Math.floor(Math.random()*reasons.length)];
+
+const images = ["IMG_2354.JPEG"];
+
+document.getElementById("img").src="images/img"+Math.floor(Math.random()*13)+".JPEG";
