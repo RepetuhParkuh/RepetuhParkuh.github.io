@@ -1,0 +1,689 @@
+
+/* ========================================
+   ZÁKLAD
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --green: #073b36;
+    --green-dark: #022b28;
+    --gold: #c6a45c;
+    --cream: #f5ebd0;
+    --text: #202723;
+    --muted: #666d67;
+    --page-bg: #f4f3ee;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: var(--page-bg);
+}
+
+/* ========================================
+   HLAVNÍ BANNER
+   ======================================== */
+
+.hero {
+    position: relative;
+    isolation: isolate;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    column-gap: 5%;
+
+    width: 100%;
+    min-height: 680px;
+    padding: 60px 6.5% 95px;
+
+    overflow: hidden;
+}
+
+.page-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(247, 246, 241, 0.94) 0%,
+            rgba(247, 246, 241, 0.62) 50%,
+            rgba(247, 246, 241, 0.02) 100%
+        ),
+        url("../src/3Djimo_background.jpg") center center / cover no-repeat;
+}
+
+/* Jemné dekorativní kruhy */
+
+.hero::before,
+.hero::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    right: -180px;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.hero::before {
+    width: 650px;
+    height: 650px;
+    border: 1px solid rgba(7, 59, 54, 0.09);
+}
+
+.hero::after {
+    width: 480px;
+    height: 480px;
+    right: -95px;
+    border: 1px solid rgba(198, 164, 92, 0.16);
+}
+
+/* ========================================
+   LEVÁ STRANA – TEXT
+   ======================================== */
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 620px;
+}
+
+.hero-eyebrow {
+    margin-bottom: 24px;
+
+    color: var(--green);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    line-height: 1.8;
+}
+
+.hero-eyebrow span {
+    padding: 0 4px;
+    color: var(--gold);
+}
+
+.hero h1 {
+    margin-bottom: 25px;
+
+    color: var(--green-dark);
+    font-size: clamp(42px, 4.5vw, 68px);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -2px;
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--green);
+}
+
+.hero-description {
+    max-width: 500px;
+    margin-bottom: 32px;
+
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+/* ========================================
+   TLAČÍTKA V BANNERU
+   ======================================== */
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.hero-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+
+    padding: 17px 24px;
+
+    color: var(--cream);
+    background: linear-gradient(
+        135deg,
+        var(--green),
+        var(--green-dark)
+    );
+
+    border: 1px solid rgba(198, 164, 92, 0.5);
+    border-radius: 5px;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-decoration: none;
+
+    box-shadow: 0 8px 22px rgba(2, 43, 40, 0.13);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.hero-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(2, 43, 40, 0.2);
+}
+
+.hero-button span {
+    font-size: 20px;
+    transition: transform 0.25s ease;
+}
+
+.hero-button:hover span {
+    transform: translateX(4px);
+}
+
+.hero-link {
+    color: var(--green);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration-color: rgba(198, 164, 92, 0.8);
+    text-underline-offset: 5px;
+}
+
+.hero-link:hover {
+    color: #49746b;
+}
+
+/* ========================================
+   PRAVÁ STRANA – FOTOGRAFIE
+   ======================================== */
+
+
+/* Popisek fotografie */
+
+.visual-caption {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 14px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+
+    background: rgba(2, 43, 40, 0.82);
+    color: #f5ebd0;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    backdrop-filter: blur(8px);
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    flex-shrink: 0;
+
+    background: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(198, 164, 92, 0.7);
+}
+
+/* ========================================
+   SPODNÍ POPISEK
+   ======================================== */
+
+.hero-bottom {
+    position: absolute;
+    right: 6.5%;
+    bottom: 28px;
+    left: 6.5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding-top: 18px;
+    border-top: 1px solid rgba(7, 59, 54, 0.15);
+
+    color: #747a73;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* ========================================
+   KARTY
+   ======================================== */
+
+.features {
+    position: relative;
+    overflow: hidden;
+    color: #f5ebd0;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 45%,
+            rgba(9, 70, 68, 0.5),
+            transparent 70%
+        ),
+        linear-gradient(
+            135deg,
+            #031f20,
+            #052c2d 50%,
+            #031e20
+        );
+}
+
+/* Jemná dekorativní technologická mřížka */
+
+.features::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(
+            rgba(70, 179, 190, 0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(70, 179, 190, 0.035) 1px,
+            transparent 1px
+        );
+
+    background-size: 36px 36px;
+
+    mask-image: linear-gradient(
+        to bottom,
+        transparent,
+        black 15%,
+        black 85%,
+        transparent
+    );
+}
+
+/* Tři sloupce */
+
+.features-grid {
+    position: relative;
+    z-index: 1;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 30px 4% 28px;
+}
+
+.feature-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-width: 0;
+    padding: 0 30px;
+
+    text-align: center;
+}
+
+/* Zlaté oddělovací linky */
+
+.feature-card + .feature-card::before {
+    content: "";
+    position: absolute;
+
+    left: 0;
+    top: 32px;
+    bottom: 12px;
+
+    width: 1px;
+
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(198, 164, 92, 0.8) 15%,
+        rgba(198, 164, 92, 0.8) 85%,
+        transparent
+    );
+}
+
+/* Šestiúhelníková ikona */
+
+.feature-icon {
+    display: grid;
+    place-items: center;
+
+    width: 100px;
+    height: 100px;
+    margin-bottom: 18px;
+
+    color: #fff8df;
+    background: rgba(2, 24, 25, 0.75);
+
+    border: 2px solid #c6a45c;
+
+    clip-path: polygon(
+        50% 0%,
+        92% 24%,
+        92% 76%,
+        50% 100%,
+        8% 76%,
+        8% 24%
+    );
+
+    filter: drop-shadow(0 0 8px rgba(198, 164, 92, 0.25));
+}
+
+/* Vnitřní obrys ikony */
+
+.feature-icon span {
+    display: grid;
+    place-items: center;
+
+    width: 82px;
+    height: 82px;
+
+    clip-path: polygon(
+        50% 0%,
+        92% 24%,
+        92% 76%,
+        50% 100%,
+        8% 76%,
+        8% 24%
+    );
+
+    background: linear-gradient(
+        145deg,
+        rgba(198, 164, 92, 0.15),
+        rgba(0, 0, 0, 0.3)
+    );
+
+    font-size: 39px;
+    line-height: 1;
+    text-shadow: 0 0 12px rgba(255, 244, 210, 0.3);
+}
+
+/* Tyrkysový detail třetí ikony */
+
+.feature-icon-blue {
+    border-color: #41c9e7;
+    color: #41c9e7;
+}
+
+.feature-icon-blue span {
+    background: rgba(20, 125, 160, 0.14);
+    text-shadow: 0 0 14px rgba(65, 201, 231, 0.5);
+}
+
+/* Texty karet */
+
+.feature-eyebrow {
+    margin-bottom: 6px;
+
+    color: #e4cd8d;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    line-height: 1.5;
+}
+
+.feature-card h2 {
+    margin-bottom: 12px;
+
+    color: #40c9ef;
+    font-size: clamp(23px, 2.4vw, 34px);
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.feature-description {
+    max-width: 390px;
+
+    color: rgba(245, 248, 245, 0.9);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* Závěrečný pruh */
+
+.features-bottom {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 26px 20px 30px;
+
+    border-top: 1px solid rgba(198, 164, 92, 0.35);
+    text-align: center;
+}
+
+.features-bottom h2 {
+    color: #f5f5ed;
+    font-size: clamp(20px, 2.5vw, 32px);
+    font-weight: 500;
+    letter-spacing: 2px;
+    line-height: 1.4;
+}
+
+.features-bottom-line {
+    display: block;
+
+    width: 180px;
+    height: 2px;
+    margin-top: 14px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #c6a45c,
+        #fff0b5,
+        #c6a45c,
+        transparent
+    );
+
+    box-shadow: 0 0 12px rgba(198, 164, 92, 0.45);
+}
+
+/* Jemná animace při najetí */
+
+.feature-card {
+    transition: transform 0.25s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+}
+
+/* ========================================
+   RESPONZIVNÍ ROZLOŽENÍ
+   ======================================== */
+
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+        column-gap: 4%;
+        min-height: 600px;
+        padding: 50px 5% 95px;
+    }
+
+    .hero h1 {
+        font-size: clamp(40px, 5vw, 58px);
+        letter-spacing: -1.5px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .visual-caption {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        padding: 12px;
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .hero-bottom {
+        right: 5%;
+        left: 5%;
+    }
+
+    .features {
+        padding: 75px 5%;
+    }
+
+    .features-grid {
+        gap: 16px;
+    }
+
+    .feature-card {
+        padding: 24px;
+    }
+
+    .feature-card h3 {
+        font-size: 19px;
+    }
+}
+
+@media (max-width: 650px) {
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        min-height: auto;
+        padding: 45px 7% 95px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-eyebrow {
+        margin-bottom: 20px;
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .hero h1 {
+        margin-bottom: 20px;
+        font-size: clamp(40px, 10vw, 58px);
+        letter-spacing: -1.5px;
+    }
+
+    .hero-description {
+        margin-bottom: 26px;
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .hero-actions {
+        gap: 20px;
+    }
+
+    .hero-image {
+        height: 100%;
+        min-height: 0;
+    }
+
+    .visual-caption {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        font-size: 9px;
+    }
+
+    .hero-bottom {
+        right: 7%;
+        left: 7%;
+        gap: 12px;
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .page-hero {
+    
+
+        background:
+            linear-gradient(
+                90deg,
+                rgba(247, 246, 241, 0.94) 0%,
+                rgba(247, 246, 241, 0.62) 92%,
+                rgba(247, 246, 241, 0.02) 100%
+            ),
+            url("../src/3Djimo_background.jpg") center center / cover no-repeat;
+    }
+
+    .features {
+        padding: 60px 7%;
+    }
+
+    .features-heading {
+        margin-bottom: 32px;
+        text-align: left;
+    }
+
+    .features-intro {
+        margin: 0;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .feature-card {
+        min-height: 280px;
+        padding: 26px;
+    }
+}
+
+/* Přístupnost: omezení animací */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+
+    .feature-card,
+    .feature-link span {
+        transition: none;
+    }
+}
