@@ -1,38 +1,226 @@
+
 <!DOCTYPE html>
-<html lang="cz">
+<html lang="cs">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3DJIMO | Tvoříme budoucnost</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="src/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="src/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="src/favicon-16x16.png">
-    <link rel="manifest" href="src/site.webmanifest">
+    <meta name="description" content="Poznejte tým 3DJIMO, naše hodnoty a přístup k inovacím.">
+    <title>O nás | 3DJIMO</title>
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/about.css">
 </head>
 <body>
-    <!-- NAVIGACE -->
-    <header class="site-header">
-        <div class="nav-div">
-    
-            <a href="index.html" class="site-logo" aria-label="3DJIMO – Domů">
-        <img src="src/logo_3DJimo.png" alt="3DJIMO">
-    </a>
-    
-            <nav aria-label="Hlavní navigace">
-                <a href="index.html">Domů</a>
-                <a href="about.html" class="nav-active">O nás</a>
-                <a href="reseni.html">Řešení</a>
-                <!-- <a href="blog.html">Blog</a> -->
-    
-                <a href="kontakt.html" class="nav-button">
-                    KONTAKT <span>→</span>
+
+    <div class="about-page-hero">
+
+        <!-- NAVIGACE -->
+        <header class="site-header">
+            <div class="nav-div">
+                <a href="index.html" class="site-logo" aria-label="3DJIMO – Domů">
+                    <img src="src/logo_3DJimo.png" alt="3DJIMO">
                 </a>
-            </nav>
+
+                <nav aria-label="Hlavní navigace">
+                    <a href="index.html">Domů</a>
+                    <a href="about.html" class="nav-active">O nás</a>
+                    <a href="reseni.html">Řešení</a>                
+                    <!-- <a href="blog.html">Blog</a> -->                
+                    <a href="kontakt.html" class="nav-button">
+                        KONTAKT <span>→</span>
+                    </a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="about-page">
+
+            <!-- ÚVODNÍ BANNER -->
+            <section class="about-hero">
+                <div class="about-hero-content">               
+
+                    <h1>
+                        Naše vášeň,<br>
+                        Váš jednodušší život
+                    </h1>
+
+                    <span class="about-gold-line"></span>
+
+                    <p>
+                        Jsme nová, kreativní firma, která se vám věnuje
+                        pomoci lidem v každodenních úkonech. Naším jediným
+                        cílem je, aby byl život jednodušší, lehčí a plný
+                        radosti. Naše produkty jsou navrženy
+                        tak, aby standardní úkoly byly pro každého snadno
+                        dostupné a bez námahy.
+                    </p>
+                </div>
+
+                <blockquote class="about-quote">
+                    <p>
+                        „Technologie mají smysl tehdy,
+                        když pomáhají lidem.“
+                    </p>                
+                </blockquote>
+            </section>
+
+            <!-- NÁŠ TÝM -->
+            <section class="team-section">
+                <div class="team-grid">
+
+                    <article class="team-card">
+                        <img src="src/team/josef.jpg" alt="Josef Myča">
+                        <h2>Josef Myča</h2>
+                        <span class="team-role">CEO</span>
+                        <p>
+                            Vize, design<br>
+                            a hlavní mentor<br>
+                            technického konceptu
+                        </p>
+                        <a href="#" class="team-link" aria-label="LinkedIn – Josef Myča">in</a>
+                    </article>
+
+                    <article class="team-card">
+                        <img src="src/team/martin.jpg" alt="Ing. Martin Mažůrek">
+                        <h2>Ing. Martin Mažůrek</h2>
+                        <span class="team-role">CTO</span>
+                        <p>
+                            Projektový management,<br>
+                            technologie a<br>
+                            inženýring
+                        </p>
+                        <a href="#" class="team-link" aria-label="LinkedIn – Martin Mažůrek">in</a>
+                    </article>
+
+                    <article class="team-card">
+                        <img src="src/team/daniel.jpg" alt="Daniel Myča">
+                        <h2>Daniel Myča</h2>
+                        <span class="team-role">COO</span>
+                        <p>
+                            Facility management
+                        </p>
+                        <a href="#" class="team-link" aria-label="LinkedIn – Daniel Myča">in</a>
+                    </article>
+
+                    <article class="team-card">
+                        <img src="src/team/ladislav.jpg" alt="Ladislav Struhař">
+                        <h2>Ladislav Struhař</h2>
+                        <span class="team-role">CFO</span>
+                        <p>
+                            Finanční management
+                        </p>
+                        <a href="#" class="team-link" aria-label="LinkedIn – Ladislav Struhař">in</a>
+                    </article>
+
+                </div>
+
+                <aside class="team-manifesto">
+                    <span class="manifesto-quote-mark">“</span>
+                    <p>
+                        Spojujeme odbornost, technologie a lidský přístup,
+                        abychom vytvářeli řešení, která mají skutečný dopad
+                        na každodenní život.
+                    </p>
+                    <span class="about-gold-line"></span>
+                </aside>
+            </section>
+        </main>
+    </div>
+
+        <!-- NAŠE HODNOTY -->
+       
+        <section class="values-section">
+
+            <!-- 1. LIDÉ -->
+            <article class="value-item">
+                <span class="value-icon" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" fill="none">
+                        <circle cx="32" cy="17" r="7" />
+                        <circle cx="14" cy="23" r="5.5" />
+                        <circle cx="50" cy="23" r="5.5" />
+                        <path d="M19 48v-5c0-8 5-13 13-13s13 5 13 13v5" />
+                        <path d="M4 46v-4c0-6 4-10 10-10 3 0 6 1 8 4" />
+                        <path d="M60 46v-4c0-6-4-10-10-10-3 0-6 1-8 4" />
+                        <path d="M23 52h18" />
+                    </svg>
+                </span>
+                <div>
+                    <h2>LIDÉ</h2>
+                    <p>V centru všeho</p>
+                </div>
+            </article>
+
+            <!-- 2. INOVACE -->
+            <article class="value-item">
+                <span class="value-icon" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" fill="none">
+                        <path d="M23 39c-2-3-7-7-7-15a16 16 0 0 1 32 0c0 8-5 12-7 15" />
+                        <path d="M24 44h16M25 49h14M28 54h8" />
+                        <path d="M25 37h14v5H25z" />
+                        <circle cx="32" cy="24" r="7" />
+                        <path d="M32 13v-3M21 24h-3M46 24h-3M24 16l-2-2M40 16l2-2" />
+                        <path d="M32 20v8M28 24h8" />
+                    </svg>
+                </span>
+                <div>
+                    <h2>INOVACE</h2>
+                    <p>S reálným dopadem</p>
+                </div>
+            </article>
+
+            <!-- 3. ŘEŠENÍ -->
+            <article class="value-item">
+                <span class="value-icon" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" fill="none">
+                        <path d="M26 8h12l2 6 5 2 6-3 7 10-4 5v6l4 5-7 10-6-3-5 2-2 6H26l-2-6-5-2-6 3-7-10 4-5v-6l-4-5 7-10 6 3 5-2z" />
+                        <circle cx="32" cy="31" r="12" />
+                        <path d="m25 31 5 5 10-11" />
+                    </svg>
+                </span>
+                <div>
+                    <h2>ŘEŠENÍ</h2>
+                    <p>Nápady měníme v praxi</p>
+                </div>
+            </article>
+
+            <!-- 4. PARTNERSTVÍ -->
+            <article class="value-item">
+                <span class="value-icon" aria-hidden="true">
+                    
+                    <svg class="partnership-icon" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="m11 17 2 2a1 1 0 1 0 3-3" />
+                        <path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4" />
+                        <path d="m21 3 1 11h-2" />
+                        <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3" />
+                        <path d="M3 4h8" />
+                    </svg>
+
+                </span>
+                <div>
+                    <h2>PARTNERSTVÍ</h2>
+                    <p>A dlouhodobá spolupráce</p>
+                </div>
+            </article>
+
+            <!-- 5. KVALITA -->
+            <article class="value-item">
+                <span class="value-icon" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" fill="none">
+                        <path d="M32 6 53 14v15c0 14-9 23-21 29C20 52 11 43 11 29V14z" />
+                        <path d="m21 32 7 7 15-16" />
+                    </svg>
+                </span>
+                <div>
+                    <h2>KVALITA</h2>
+                    <p>A spolehlivost</p>
+                </div>
+            </article>
+
+        </section>
+
     
-        </div>
-    </header>
-    
+
 </body>
 </html>
