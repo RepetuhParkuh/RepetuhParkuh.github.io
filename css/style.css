@@ -21,15 +21,27 @@
 
 html {
     scroll-behavior: smooth;
+    min-height: 100%;
+    margin: 0;
 }
 
 body {
     min-height: 100vh;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     color: var(--text);
     background: var(--page-bg);
 }
+
+main{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
 
 /* ========================================
    HLAVNÍ BANNER
@@ -284,6 +296,7 @@ body {
     position: relative;
     overflow: hidden;
     color: #f5ebd0;
+    flex: 1;
 
     background:
         radial-gradient(
@@ -355,6 +368,7 @@ body {
     padding: 0 30px;
 
     text-align: center;
+    height: 100%;
 }
 
 /* Zlaté oddělovací linky */
@@ -459,7 +473,8 @@ body {
 }
 
 .feature-card h2 {
-    margin-bottom: 12px;
+    margin-top: auto;
+    margin-bottom: 12px;    
 
     color: #40c9ef;
     font-size: clamp(23px, 2.4vw, 34px);
@@ -532,6 +547,9 @@ body {
    RESPONZIVNÍ ROZLOŽENÍ
    ======================================== */
 
+
+/* Tablety */
+
 @media (max-width: 900px) {
     .hero {
         grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
@@ -580,7 +598,9 @@ body {
     }
 }
 
-@media (max-width: 650px) {
+/* vetsi mobily */
+
+@media (max-width: 700px) {
     .hero {
         grid-template-columns: 1fr;
         gap: 35px;
@@ -668,6 +688,42 @@ body {
     .feature-card {
         min-height: 280px;
         padding: 26px;
+    }
+
+    .feature-card::before{
+        display: none;
+    }
+}
+
+/* mensi mobily */
+
+@media (max-width: 450px) {
+    .nav-div {
+        flex-wrap: nowrap;
+        padding: 10px 4%;
+        gap: 8px;
+    }
+
+    .site-logo img {
+        width: 100px;
+        height: auto;
+    }
+
+    .nav-div nav {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .nav-div nav a {
+        white-space: nowrap;
+        font-size: 12px;
+    }
+
+    .nav-div nav .nav-button {
+        padding: 9px 10px;
+        flex-shrink: 0;
     }
 }
 
