@@ -23,7 +23,7 @@
 .about-page-hero {
     position: relative;
     isolation: isolate;
-    overflow: hidden;
+    overflow: hidden;    
 
     background:
         linear-gradient(
@@ -32,7 +32,7 @@
             rgba(247, 246, 241, 0.62) 50%,
             rgba(247, 246, 241, 0.02) 100%
         ),
-        url("../src/3Djimo_background.jpg") center center / cover no-repeat;
+        url("../src/about_background.jpg") center center / cover no-repeat;
 }
 
 .about-page-hero .site-header {
@@ -55,14 +55,8 @@
 
     padding: 55px 6.5% 65px;
 
-    background:
-        linear-gradient(
-            90deg,
-            rgba(245, 235, 208, 0.90) 0%,
-            rgba(245, 235, 208, 0.76) 42%,
-            rgba(245, 235, 208, 0.25) 72%,
-            rgba(245, 235, 208, 0.08) 100%
-        ),        
+    background: transparent;
+        
 }
 
 .about-hero-content {
@@ -612,7 +606,7 @@
    ======================================== */
 
 @media (max-width: 480px) {
-    .about-hero {
+    .about-page-hero {
         min-height: auto;
         padding: 38px 5% 35px;
 
@@ -622,7 +616,7 @@
                 rgba(245, 235, 208, 0.94),
                 rgba(245, 235, 208, 0.78)
             ),
-            url("../src/3Djimo_background.jpg") center center / cover no-repeat;
+            url("../src/about_background.jpg") right center / cover no-repeat;
     }
 
 
