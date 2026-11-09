@@ -492,7 +492,7 @@
             rgba(245, 235, 208, 0.18) 75%,
             rgba(245, 235, 208, 0.05) 100%
         ),
-        url("../src/hodnoty_background.jpg") center 65% / cover no-repeat;
+        url("../src/hodnoty_background.jpg") center 20% / cover no-repeat;
 }
 
 /* ÚVOD A FOTOGRAFIE */
