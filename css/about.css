@@ -835,8 +835,7 @@
 
 @media (max-width: 480px) {
     .about-page-hero {
-        min-height: auto;
-        padding: 38px 5% 35px;
+        min-height: auto; 
 
         background:
             linear-gradient(
