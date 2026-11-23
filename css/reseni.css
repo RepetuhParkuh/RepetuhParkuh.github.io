@@ -1,0 +1,542 @@
+
+/* ========================================
+   ŘEŠENÍ – 3DJIMO
+   ======================================== */
+
+:root {
+    --solution-green: #073b36;
+    --solution-dark: #022b28;
+    --solution-gold: #c6a45c;
+    --solution-cream: #f5ebd0;
+    --solution-white: #f7f5ed;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #202723;
+    background: #f4f3ee;
+    overflow-x: hidden;
+}
+
+.solutions-page {
+    position: relative;
+    isolation: isolate;
+
+    min-height: 100vh;
+    min-height: 100svh;
+
+    display: flex;
+    flex-direction: column;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(247, 246, 241, 0.88) 0%,
+            rgba(247, 246, 241, 0.70) 50%,
+            rgba(247, 246, 241, 0.30) 100%
+        ),
+        url("../src/3Djimo_background.jpg") center center / cover no-repeat;
+}
+
+/* HLAVNÍ OBSAH */
+
+.solutions-main {
+    flex: 1 0 auto;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* ZRUŠENÍ SAMOSTATNÉHO POZADÍ HERO */
+
+.solutions-visual {
+    display: none;
+}
+
+/* NAVIGACE */
+
+.solutions-page .site-header {
+    position: relative;
+    z-index: 5;
+    background: transparent;
+}
+
+.solutions-page .nav-div {
+    background: transparent;
+}
+
+/* HLAVNÍ OBSAH */
+
+.solutions-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ========================================
+   ÚVODNÍ ČÁST
+   ======================================== */
+
+.solutions-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+
+    min-height: 350px;
+    padding: 35px 6.5% 45px;
+}
+
+.solutions-intro {
+    position: relative;
+    z-index: 2;
+
+    width: 58%;
+    max-width: 750px;
+}
+
+.solutions-intro h1 {
+    max-width: 700px;
+    margin: 0 0 20px;
+
+    color: var(--solution-dark);
+
+    font-size: clamp(36px, 4vw, 58px);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -1.6px;
+}
+
+.solutions-intro p {
+    max-width: 620px;
+    margin: 0;
+
+    color: #303b35;
+
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+/* Fotografie vpravo */
+
+.solutions-visual {
+    position: absolute;
+    z-index: 1;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 49%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(247, 246, 241, 0.98) 0%,
+            rgba(247, 246, 241, 0.2) 35%,
+            transparent 65%
+        ),
+        url("../src/3Djimo_background.jpg") center 35% / cover no-repeat;
+}
+
+/* ========================================
+   KARTY ŘEŠENÍ
+   ======================================== */
+
+.solutions-grid {
+    position: relative;
+    z-index: 2;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 15px;
+
+    padding: 0 6.5% 30px;
+}
+
+.solution-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    padding: 16px;
+
+    color: var(--solution-white);
+
+    border: 1px solid rgba(198, 164, 92, 0.4);
+    border-radius: 12px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(4, 53, 48, 0.97),
+        rgba(1, 31, 29, 0.98)
+    );
+
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.13);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.solution-card:hover {
+    transform: translateY(-5px);
+
+    border-color: var(--solution-gold);
+
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.2);
+}
+
+.solution-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    min-height: 48px;
+    margin-bottom: 12px;
+}
+
+.solution-icon {
+    display: grid;
+    place-items: center;
+
+    flex: 0 0 38px;
+    width: 38px;
+    height: 38px;
+
+    color: var(--solution-gold);
+    font-size: 28px;
+}
+
+.solution-heading h2 {
+    margin: 0 0 4px;
+
+    color: var(--solution-cream);
+
+    font-size: clamp(12px, 1.15vw, 16px);
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.solution-heading p {
+    margin: 0;
+
+    color: #c4d1c9;
+    font-size: 11px;
+}
+
+/* Obrázky karet */
+
+.solution-image {
+    width: 100%;
+    height: 135px;
+
+    margin-bottom: 12px;
+
+    border: 1px solid rgba(198, 164, 92, 0.3);
+    border-radius: 7px;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.solution-image.mobility {
+    background-image: url("../src/mobilita.jpg");
+}
+
+.solution-image.safety {
+    background-image: url("../src/bezpecnost.jpg");
+}
+
+.solution-image.accessories {
+    background-image: url("../src/prislusenstvi.jpg");
+}
+
+.solution-image.individual {
+    background-image: url("../src/individualni_reseni.jpg");
+}
+
+.solution-description {
+    margin: 0;
+    padding-right: 12px;
+
+    color: #e0e8e3;
+
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.solution-arrow {
+    align-self: flex-end;
+
+    display: grid;
+    place-items: center;
+
+    width: 27px;
+    height: 27px;
+
+    margin-top: 10px;
+
+    color: var(--solution-gold);
+
+    border: 1px solid rgba(198, 164, 92, 0.5);
+    border-radius: 50%;
+
+    font-size: 17px;
+}
+
+/* ========================================
+   SPODNÍ PRUH
+   ======================================== */
+
+.solutions-values {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    padding: 15px 6.5%;
+
+    color: var(--solution-cream);
+
+    background: linear-gradient(
+        90deg,
+        #032e2a,
+        #011f1d,
+        #032e2a
+    );
+
+    border-top: 1px solid rgba(198, 164, 92, 0.35);
+}
+
+.solutions-value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    min-width: 0;
+    padding: 7px 12px;
+}
+
+.solutions-value + .solutions-value {
+    border-left: 1px solid rgba(198, 164, 92, 0.4);
+}
+
+.solutions-value > span {
+    flex: 0 0 auto;
+
+    color: var(--solution-gold);
+    font-size: 28px;
+}
+
+.solutions-value p {
+    margin: 0;
+
+    color: #d5ded7;
+
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.solutions-value strong {
+    display: block;
+
+    color: var(--solution-cream);
+
+    font-size: 13px;
+}
+
+/* FOOTER – SPODNÍ ZELENÝ PRUH */
+
+.solutions-values {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    margin-top: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    padding: 17px 6.5%;
+
+    color: var(--solution-cream);
+
+    background: linear-gradient(
+        90deg,
+        #032e2a,
+        #011f1d,
+        #032e2a
+    );
+
+    border-top: 1px solid rgba(198, 164, 92, 0.4);
+}
+
+/* ========================================
+   TABLETY
+   ======================================== */
+
+@media (max-width: 1000px) {
+
+    .solutions-hero {
+        min-height: 320px;
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+
+    .solutions-grid {
+        padding-right: 5%;
+        padding-left: 5%;
+        gap: 10px;
+    }
+
+    .solution-card {
+        padding: 12px;
+    }
+
+    .solution-image {
+        height: 110px;
+    }
+
+    .solutions-values {
+        padding-right: 4%;
+        padding-left: 4%;
+    }
+
+    .solutions-value {
+        gap: 8px;
+        padding: 7px;
+    }
+}
+
+/* ========================================
+   MENŠÍ TABLETY
+   ======================================== */
+
+@media (max-width: 750px) {
+
+    .solutions-hero {
+        min-height: 330px;
+    }
+
+    .solutions-intro {
+        width: 75%;
+    }
+
+    .solutions-visual {
+        width: 55%;
+        opacity: 0.65;
+    }
+
+    .solutions-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .solution-image {
+        height: 150px;
+    }
+
+    .solutions-values {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .solutions-value:nth-child(3) {
+        border-left: none;
+    }
+
+    .solutions-value:nth-child(n + 3) {
+        border-top: 1px solid rgba(198, 164, 92, 0.3);
+    }
+}
+
+/* ========================================
+   MOBILY
+   ======================================== */
+
+@media (max-width: 480px) {
+
+    .solutions-hero {
+        min-height: 310px;
+        padding: 35px 6%;
+    }
+
+    .solutions-intro {
+        width: 100%;
+    }
+
+    .solutions-intro h1 {
+        font-size: 36px;
+    }
+
+    .solutions-intro p {
+        font-size: 14px;
+    }
+
+    .solutions-visual {
+        width: 100%;
+        opacity: 0.22;
+    }
+
+    .solutions-grid {
+        grid-template-columns: 1fr;
+        padding: 0 5% 25px;
+    }
+
+    .solution-card {
+        padding: 15px;
+    }
+
+    .solution-image {
+        height: 180px;
+    }
+
+    .solutions-values {
+        padding: 12px 3%;
+    }
+
+    .solutions-value {
+        justify-content: flex-start;
+        gap: 7px;
+        padding: 10px 5px;
+    }
+
+    .solutions-value > span {
+        font-size: 23px;
+    }
+
+    .solutions-value p {
+        font-size: 10px;
+    }
+
+    .solutions-value strong {
+        font-size: 11px;
+    }
+}
+
+/* OMEZENÍ ANIMACÍ */
+
+@media (prefers-reduced-motion: reduce) {
+    .solution-card {
+        transition: none;
+    }
+
+    .solution-card:hover {
+        transform: none;
+    }
+}
