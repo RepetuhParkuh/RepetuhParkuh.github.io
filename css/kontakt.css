@@ -1,0 +1,314 @@
+
+/* ========================================
+   KONTAKTNÍ STRÁNKA – 3DJIMO
+   ======================================== */
+
+.contact-page {
+    position: relative;
+    isolation: isolate;
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(247, 246, 241, 0.94) 0%,
+            rgba(247, 246, 241, 0.78) 48%,
+            rgba(247, 246, 241, 0.08) 100%
+        ),
+        url("../src/3Djimo_background.jpg") center center / cover no-repeat;
+}
+
+/* NAVIGACE */
+
+.contact-page .site-header {
+    position: relative;
+    z-index: 2;
+    background: transparent;
+}
+
+.contact-page .nav-div {
+    background: transparent;
+}
+
+/* HLAVNÍ ROZLOŽENÍ */
+
+.contact-main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.contact-section {
+    width: 100%;
+    max-width: 1600px;
+
+    margin: 0 auto;
+    padding: 45px 6.5% 75px;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(380px, 0.9fr);
+
+    align-items: center;
+    gap: 65px;
+}
+
+/* LEVÁ ČÁST */
+
+.contact-content {
+    max-width: 620px;
+}
+
+.contact-content h1 {
+    margin: 0 0 22px;
+
+    color: var(--green-dark);
+
+    font-size: clamp(38px, 4.2vw, 62px);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -1.5px;
+}
+
+.contact-content p {
+    max-width: 520px;
+    margin: 0;
+
+    color: #303b35;
+
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+/* FORMULÁŘ */
+
+.contact-form-card {
+    width: 100%;
+    max-width: 530px;
+
+    justify-self: end;
+
+    padding: 30px;
+
+    border: 1px solid rgba(198, 164, 92, 0.35);
+    border-radius: 16px;
+
+    background: rgba(255, 249, 226, 0.88);
+
+    box-shadow:
+        0 12px 35px rgba(2, 43, 40, 0.12),
+        0 2px 8px rgba(2, 43, 40, 0.05);
+
+    backdrop-filter: blur(8px);
+}
+
+.contact-form-card h2 {
+    margin: 0 0 18px;
+
+    color: var(--green-dark);
+
+    font-size: 24px;
+    font-weight: 800;
+}
+
+/* VSTUPNÍ POLE */
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid rgba(7, 59, 54, 0.13);
+    border-radius: 9px;
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.55);
+
+    color: var(--text);
+
+    font-family: inherit;
+    font-size: 14px;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.contact-form input {
+    height: 44px;
+}
+
+.contact-form textarea {
+    min-height: 125px;
+    resize: vertical;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #858982;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--gold);
+    background: rgba(255, 255, 255, 0.85);
+
+    box-shadow: 0 0 0 3px rgba(198, 164, 92, 0.12);
+}
+
+/* TLAČÍTKO */
+
+.contact-form button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+
+    width: fit-content;
+    min-width: 195px;
+
+    margin-top: 3px;
+    padding: 14px 23px;
+
+    border: 1px solid rgba(198, 164, 92, 0.4);
+    border-radius: 11px;
+
+    color: var(--cream);
+
+    background: linear-gradient(
+        135deg,
+        var(--green),
+        var(--green-dark)
+    );
+
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 15px rgba(2, 43, 40, 0.15);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.contact-form button:hover {
+    transform: translateY(-2px);
+
+    background: linear-gradient(
+        135deg,
+        #0b5149,
+        #064039
+    );
+
+    box-shadow: 0 8px 20px rgba(2, 43, 40, 0.22);
+}
+
+.contact-form button span {
+    font-size: 21px;
+    line-height: 1;
+
+    transition: transform 0.25s ease;
+}
+
+.contact-form button:hover span {
+    transform: translateX(4px);
+}
+
+/* ========================================
+   TABLETY
+   ======================================== */
+
+@media (max-width: 900px) {
+
+    .contact-section {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+
+        padding: 45px 5% 65px;
+    }
+
+    .contact-content h1 {
+        font-size: clamp(34px, 5vw, 48px);
+    }
+
+    .contact-content p {
+        font-size: 15px;
+    }
+
+    .contact-form-card {
+        padding: 23px;
+    }
+}
+
+/* ========================================
+   MOBILY
+   ======================================== */
+
+@media (max-width: 650px) {
+
+    .contact-page {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(247, 246, 241, 0.94),
+                rgba(247, 246, 241, 0.82)
+            ),
+            url("../src/3Djimo_background.jpg") center center / cover no-repeat;
+    }
+
+    .contact-section {
+        grid-template-columns: 1fr;
+        gap: 30px;
+
+        padding: 35px 5% 50px;
+    }
+
+    .contact-content h1 {
+        font-size: clamp(34px, 9vw, 46px);
+    }
+
+    .contact-content p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .contact-form-card {
+        max-width: none;
+        padding: 22px;
+    }
+
+    .contact-form-card h2 {
+        font-size: 21px;
+    }
+
+    .contact-form button {
+        width: 100%;
+    }
+}
+
+/* OMEZENÍ ANIMACÍ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form button,
+    .contact-form button span {
+        transition: none;
+    }
+}
