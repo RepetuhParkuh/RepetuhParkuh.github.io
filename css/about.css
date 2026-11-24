@@ -13,12 +13,18 @@
 
     width: 100%;
     overflow: hidden;
+    box-sizing: border-box;
+}
+
+.about-page *,
+.values-section *,
+.approach-section * {
+    box-sizing: border-box;
 }
 
 /* ========================================
    ÚVODNÍ BANNER
    ======================================== */
-
 
 .about-page-hero {
     position: relative;
@@ -26,11 +32,10 @@
     overflow: hidden;
 
     min-height: 90vh;
-    /*padding: 65px 6.5% 0;*/
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;    
+    justify-content: space-between;
 
     background:
         linear-gradient(
@@ -42,10 +47,7 @@
         url("../src/about_background.jpg") center center / cover no-repeat;
 }
 
-.about-page-hero .site-header {
-    background: transparent;
-}
-
+.about-page-hero .site-header,
 .about-page-hero .nav-div {
     background: transparent;
 }
@@ -63,7 +65,6 @@
     gap: 40px;
 
     padding: 55px 6.5% 65px;
-        
 }
 
 .about-hero-content {
@@ -72,7 +73,6 @@
 
     width: min(690px, 65%);
 }
-
 
 .about-hero h1 {
     max-width: 760px;
@@ -131,16 +131,6 @@
     line-height: 1.45;
 }
 
-.about-quote cite {
-    display: block;
-
-    color: var(--about-green-dark);
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 1.5;
-}
-
 /* ========================================
    TÝM – TMAVĚ ZELENÁ SEKCE
    ======================================== */
@@ -157,6 +147,7 @@
     padding: 30px 6.5% 35px;
 
     color: var(--about-white);
+
     background:
         radial-gradient(
             ellipse at 50% 0%,
@@ -202,7 +193,7 @@
     min-width: 0;
 }
 
-/* Jednotlivé karty */
+/* Karty členů týmu */
 
 .team-card {
     position: relative;
@@ -281,7 +272,7 @@
     line-height: 1.5;
 }
 
-/* LinkedIn odkaz */
+/* LinkedIn */
 
 .team-link {
     display: inline-flex;
@@ -315,7 +306,7 @@
     transform: translateY(-2px);
 }
 
-/* Firemní motto vedle karet */
+/* Firemní motto */
 
 .team-manifesto {
     display: flex;
@@ -363,6 +354,7 @@
     padding: 30px 6.5%;
 
     color: var(--about-green-dark);
+
     background:
         linear-gradient(
             90deg,
@@ -407,8 +399,7 @@
     border-left: 1px solid rgba(151, 121, 62, 0.4);
 }
 
-/* Zástupné ikonky hodnot */
-
+/* Flaticon – ikony hodnot */
 
 .value-icon {
     display: flex;
@@ -422,19 +413,10 @@
     color: #a8863f;
 }
 
-.value-icon svg {
+.value-icon i {
     display: block;
-    width: 100%;
-    height: 100%;
-
-    stroke: currentColor;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-.value-icon svg.partnership-icon {
-    stroke-width: 1.3;
+    font-size: 42px;
+    line-height: 1;
 }
 
 .value-item h2 {
@@ -454,7 +436,7 @@
     line-height: 1.4;
 }
 
-.value-item > div::after {
+.value-item > div:last-child::after {
     display: block;
 
     width: 35px;
@@ -465,10 +447,9 @@
     content: "";
 }
 
-
 /* ========================================
    POROZUMĚNÍ A NÁŠ PŘÍSTUP
-======================================== */
+   ======================================== */
 
 .approach-section {
     position: relative;
@@ -495,7 +476,7 @@
         url("../src/hodnoty_background.jpg") center 20% / cover no-repeat;
 }
 
-/* ÚVOD A FOTOGRAFIE */
+/* Úvodní text */
 
 .approach-intro {
     display: block;
@@ -504,6 +485,7 @@
 
 .approach-content h2 {
     margin: 0 0 22px;
+
     color: var(--about-green-dark);
     font-family: Georgia, "Times New Roman", serif;
     font-size: clamp(30px, 3.5vw, 48px);
@@ -513,26 +495,15 @@
 .approach-content p {
     max-width: 850px;
     margin: 0;
+
     font-size: 17px;
     line-height: 1.65;
     color: #303b35;
 }
 
-.approach-image {
-    height: 230px;
-    overflow: hidden;
-    border-radius: 14px;
-}
-
-.approach-image img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    object-position: center;
-}
-
-/* ČTYŘI KARTY */
+/* ========================================
+   ČTYŘI KARTY PŘÍSTUPU
+   ======================================== */
 
 .approach-grid {
     display: grid;
@@ -542,7 +513,6 @@
 
     align-items: stretch;
 }
-
 
 .approach-card {
     display: flex;
@@ -561,8 +531,9 @@
 
     box-shadow: 0 5px 18px rgba(70, 54, 20, 0.06);
 
-    transition: transform 0.25s ease,
-                box-shadow 0.25s ease;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 .approach-card:hover {
@@ -570,20 +541,29 @@
     box-shadow: 0 9px 24px rgba(70, 54, 20, 0.12);
 }
 
+/* Flaticon – ikony přístupu */
+
 .approach-icon {
     display: flex;
     align-items: center;
     justify-content: center;
 
+    width: 90px;
     height: 90px;
     margin-bottom: 22px;
 
     color: #a8863f;
-    font-size: 68px;
+}
+
+.approach-icon i {
+    display: block;
+    font-size: 58px;
+    line-height: 1;
 }
 
 .approach-card h3 {
     margin: 0 0 15px;
+
     font-size: 19px;
     line-height: 1.35;
 }
@@ -591,11 +571,14 @@
 .approach-card p {
     max-width: 250px;
     margin: 0;
+
     font-size: 15px;
     line-height: 1.6;
 }
 
-/* SPODNÍ LIŠTA – STEJNÝ STYL JAKO VALUES-SECTION */
+/* ========================================
+   SPODNÍ LIŠTA – POSTUP SPOLUPRÁCE
+   ======================================== */
 
 .process-section {
     display: grid;
@@ -631,6 +614,8 @@
     border-left: 1px solid rgba(151, 121, 62, 0.4);
 }
 
+/* Flaticon – ikony postupu */
+
 .process-icon {
     display: flex;
     align-items: center;
@@ -641,11 +626,17 @@
     height: 48px;
 
     color: #a8863f;
-    font-size: 40px;
+}
+
+.process-icon i {
+    display: block;
+    font-size: 38px;
+    line-height: 1;
 }
 
 .process-item h3 {
     margin: 0 0 4px;
+
     color: var(--about-green-dark);
     font-size: 16px;
     font-weight: 800;
@@ -653,6 +644,7 @@
 
 .process-item p {
     margin: 0;
+
     color: #303b35;
     font-size: 14px;
 }
@@ -662,6 +654,7 @@
    ======================================== */
 
 @media (max-width: 1100px) {
+
     .about-hero {
         gap: 25px;
         padding-right: 5%;
@@ -712,7 +705,10 @@
         flex-basis: 45px;
         width: 45px;
         height: 55px;
-        font-size: 42px;
+    }
+
+    .value-icon i {
+        font-size: 36px;
     }
 }
 
@@ -721,8 +717,10 @@
    ======================================== */
 
 @media (max-width: 800px) {
+
     .about-hero {
         min-height: 440px;
+
         align-items: flex-start;
         flex-direction: column;
         justify-content: center;
@@ -743,17 +741,12 @@
     .about-quote {
         flex: 0 1 auto;
         max-width: 420px;
-
         padding: 10px 15px;
     }
 
     .about-quote p {
         margin-bottom: 10px;
         font-size: 21px;
-    }
-
-    .about-quote cite {
-        font-size: 12px;
     }
 
     .team-grid {
@@ -783,7 +776,8 @@
         padding: 18px 12px;
     }
 
-    .value-item:nth-child(3) {
+    .value-item:nth-child(3),
+    .value-item:nth-child(5) {
         border-left: none;
     }
 
@@ -800,7 +794,7 @@
     }
 
     .approach-intro {
-        grid-template-columns: 1fr;
+        display: block;
     }
 
     .approach-image {
@@ -834,8 +828,9 @@
    ======================================== */
 
 @media (max-width: 480px) {
+
     .about-page-hero {
-        min-height: auto; 
+        min-height: auto;
 
         background:
             linear-gradient(
@@ -845,7 +840,6 @@
             ),
             url("../src/about_background.jpg") right center / cover no-repeat;
     }
-
 
     .about-hero h1 {
         font-size: clamp(32px, 9vw, 43px);
@@ -911,7 +905,8 @@
         font-size: 15px;
     }
 
-    .values-section {        
+    .values-section {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         padding: 12px 3%;
     }
 
@@ -924,7 +919,10 @@
         flex: 0 0 34px;
         width: 34px;
         height: 42px;
-        font-size: 32px;
+    }
+
+    .value-icon i {
+        font-size: 30px;
     }
 
     .value-item h2 {
@@ -935,13 +933,14 @@
         font-size: 11px;
     }
 
-    .value-item > div::after {
+    .value-item > div:last-child::after {
         width: 27px;
         margin-top: 10px;
     }
 
     .approach-section {
         padding: 40px 5% 0;
+
         background:
             linear-gradient(
                 90deg,
@@ -969,9 +968,13 @@
     }
 
     .approach-icon {
+        width: 65px;
         height: 65px;
-        font-size: 52px;
         margin-bottom: 15px;
+    }
+
+    .approach-icon i {
+        font-size: 48px;
     }
 
     .approach-card h3 {
@@ -983,6 +986,7 @@
     }
 
     .process-section {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         padding: 18px 0;
     }
 
@@ -992,10 +996,13 @@
     }
 
     .process-icon {
-        flex-basis: 34px;
+        flex: 0 0 34px;
         width: 34px;
         height: 34px;
-        font-size: 30px;
+    }
+
+    .process-icon i {
+        font-size: 28px;
     }
 
     .process-item h3 {
@@ -1012,13 +1019,16 @@
    ======================================== */
 
 @media (prefers-reduced-motion: reduce) {
+
     .team-card,
-    .team-link {
+    .team-link,
+    .approach-card {
         transition: none;
     }
 
     .team-card:hover,
-    .team-link:hover {
+    .team-link:hover,
+    .approach-card:hover {
         transform: none;
     }
 }

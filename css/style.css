@@ -421,31 +421,9 @@ main{
 
 /* Vnitřní obrys ikony */
 
-.feature-icon span {
-    display: grid;
-    place-items: center;
-
-    width: 82px;
-    height: 82px;
-
-    clip-path: polygon(
-        50% 0%,
-        92% 24%,
-        92% 76%,
-        50% 100%,
-        8% 76%,
-        8% 24%
-    );
-
-    background: linear-gradient(
-        145deg,
-        rgba(198, 164, 92, 0.15),
-        rgba(0, 0, 0, 0.3)
-    );
-
-    font-size: 39px;
+.feature-icon i {
+    font-size: 42px;
     line-height: 1;
-    text-shadow: 0 0 12px rgba(255, 244, 210, 0.3);
 }
 
 /* Tyrkysový detail třetí ikony */
@@ -455,10 +433,6 @@ main{
     color: #41c9e7;
 }
 
-.feature-icon-blue span {
-    background: rgba(20, 125, 160, 0.14);
-    text-shadow: 0 0 14px rgba(65, 201, 231, 0.5);
-}
 
 /* Texty karet */
 
